@@ -7,6 +7,7 @@ const ResultPage = () => {
   return(
     <>
       <Container>
+        <div style={{height:'500px',border:'1px solid #aaa' ,borderRadius:'20px'}}>
         <Row>
           <Col>
             <Header text="Result"/>
@@ -17,6 +18,7 @@ const ResultPage = () => {
             <ResultButtons/>
           </Col>
         </Row>
+        </div>
       </Container>
     </>
   )

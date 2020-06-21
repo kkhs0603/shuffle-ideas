@@ -15,9 +15,9 @@ const GetIdea = withRouter((props) => {
   }
   return(
     <div className="p-3">
-      <div class="input-group d-flex justify-content-center">
+      <div className="input-group d-flex justify-content-center">
         <NumerInput/>
-        <div class="input-group-append">
+        <div className="input-group-append">
           <Button text="Get" onClick={handleToAboutPage}/>
         </div>
       </div>
