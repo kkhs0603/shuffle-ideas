@@ -9,6 +9,7 @@ import {
 import MainPage from './Pages/MainPage';
 import ResultPage from './Pages/ResultPage'
 import firebase from "firebase";
+import "firebase/storage";
 
 require('dotenv').config()
 
@@ -19,13 +20,15 @@ const firebaseConfig = {
   projectId: process.env.PROJECT_ID,
   storageBucket: process.env.STORAGE_BUCKET,
   messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId:process.env.APP_ID,
+  appId: process.env.APP_ID,
   measurementId: process.env.MEASUREMENT_ID,
 };
 
 
 const App = () => {
-  firebase.initializeApp(firebaseConfig);
+  console.log(firebaseConfig)
+  const test = firebase.initializeApp(firebaseConfig)
+  console.log(test)
   return (
     <div className="p-5">
       <Router>
