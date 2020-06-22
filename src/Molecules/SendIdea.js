@@ -8,7 +8,7 @@ const SendIdea = (props) => {
       <div className="input-group d-flex justify-content-center">
         <TextInput/>
         <div className="input-group-append">
-          <Button text="Send" />
+          <Button text="Send" onClick={props.onClick}/>
         </div>
       </div>
     </div>

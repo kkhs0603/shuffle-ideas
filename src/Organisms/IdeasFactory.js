@@ -7,17 +7,18 @@ import "firebase/storage";
 import reducer from '../reducers'
 
 const IdeasFactory = () => {
-  const test = () => {
-    return console.log("a")
-  }
-  useEffect(()=>{
+  // const test = () => {
+  //   return console.log("a")
+  // }
+  // useEffect(()=>{
 
-    return test
-  }
-  )
+  //   return test
+  // }
+  // )
   const [state, dispatch] = useReducer(reducer,[])
   const [ideas, setIdeas] = useState([])
   const addFireData = (idea) => {
+    console.log("add : "+idea)
     let db = firebase.database();
     let ref = db.ref('ideas/3');
     ref.set({idea: idea})
