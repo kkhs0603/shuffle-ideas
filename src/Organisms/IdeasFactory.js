@@ -25,6 +25,7 @@ const IdeasFactory = () => {
   }
   const getFireData = () => {
     let db = firebase.database();
+    console.log('db')
     let ref = db.ref('ideas');
     ref.on('value', (snapshot)=> {
       console.log(snapshot.val())
@@ -57,7 +58,7 @@ const IdeasFactory = () => {
   return(
     <div>
       <CountAndHistory/>
-      <SendIdea data={addFireData}/>
+      <SendIdea onClick={getFireData}/>
       <GetIdea/>
     </div>
   )
