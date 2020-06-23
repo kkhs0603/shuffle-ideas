@@ -11,7 +11,6 @@ import ResultPage from './Pages/ResultPage'
 import firebase from "firebase";
 import "firebase/storage";
 
-require('dotenv').config()
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
@@ -26,7 +25,9 @@ const firebaseConfig = {
 
 
 const App = () => {
-  console.log(firebaseConfig)
+  require('dotenv').config();
+
+  console.log(process.env.API_KEY);
   const test = firebase.initializeApp(firebaseConfig)
   console.log(test)
   return (
