@@ -2,8 +2,14 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../Organisms/Header'
 import ResultButtons from '../Organisms/ResultButtons'
+import firebase from "firebase";
+import "firebase/storage";
 
 const ResultPage = () => {
+  var database = firebase.database();
+  firebase.database().ref('users/01').set({
+    username: "hello",
+  });
   return(
     <>
       <Container>
