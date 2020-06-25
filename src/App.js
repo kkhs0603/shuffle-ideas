@@ -11,7 +11,7 @@ import ResultPage from './Pages/ResultPage'
 import firebase from "firebase";
 import "firebase/storage";
 
-
+require('dotenv').config();
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -25,11 +25,7 @@ const firebaseConfig = {
 
 
 const App = () => {
-  require('dotenv').config();
-
-  console.log(process.env.REACT_APP_API_KEY);
-  const test = firebase.initializeApp(firebaseConfig)
-  console.log(test)
+  firebase.initializeApp(firebaseConfig)
   return (
     <div className="p-5">
       <Router>
