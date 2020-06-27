@@ -6,7 +6,6 @@ import firebase from "firebase";
 import "firebase/storage";
 
 const ResultPage = () => {
-  var database = firebase.database();
   firebase.database().ref('users/01').set({
     username: "hello",
   });
