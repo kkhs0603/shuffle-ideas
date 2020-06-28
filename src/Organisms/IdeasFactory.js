@@ -7,14 +7,6 @@ import "firebase/storage";
 import reducer from '../reducers'
 
 const IdeasFactory = () => {
-  // const test = () => {
-  //   return console.log("a")
-  // }
-  // useEffect(()=>{
-
-  //   return test
-  // }
-  // )
   const [state, dispatch] = useReducer(reducer,[])
   const [ideas, setIdeas] = useState([])
   const addFireData = (idea) => {
@@ -29,36 +21,23 @@ const IdeasFactory = () => {
     let ref = db.ref('ideas');
     ref.on('value', (snapshot)=> {
       console.log(snapshot.val())
-      setIdeas(snapshot.val())
       snapshot.val()
       setIdeas([...ideas,snapshot.val()])
     });
     console.log(ideas)
   }
-  
-  const getLastID = () => {
+  const setIdea = () => {
     let db = firebase.database();
-    let ref = db.ref("ideas/");
-    let self = this;
-    let hoge;
-    ref
-      .orderByKey()
-      .limitToLast(1)
-      .on("value", snapshot => {
-        let res = snapshot.val();
-        console.log(res)
-        for (let i in res) {
-          console.log(res[i].id);
-          hoge = res[i].id;
-          // return res[i].id;
-        }
-      });
-    return hoge
+    let ref = db.ref('ideas');
+    ref.push({
+      "idea":"test"
+    });
   }
+  
   return(
     <div>
       <CountAndHistory/>
-      <SendIdea onClick={getFireData}/>
+      <SendIdea onClick={setIdea}/>
       <GetIdea/>
     </div>
   )
