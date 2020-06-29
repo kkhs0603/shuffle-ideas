@@ -5,6 +5,7 @@ import GetIdea from '../Molecules/GetIdea'
 import firebase from "firebase";
 import "firebase/storage";
 import reducer from '../reducers'
+import {useSelector} from "react-redux";
 
 const IdeasFactory = () => {
   const [state, dispatch] = useReducer(reducer,[])
@@ -26,13 +27,17 @@ const IdeasFactory = () => {
     });
     console.log(ideas)
   }
+  const userState = useSelector(state => {console.log(state); return state.values});
   const setIdea = () => {
+    console.log(userState);
     let db = firebase.database();
     let ref = db.ref('ideas');
     ref.push({
       "idea":"test"
     });
   }
+
+  
   
   return(
     <div>
