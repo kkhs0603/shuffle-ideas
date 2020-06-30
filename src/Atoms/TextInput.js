@@ -5,15 +5,14 @@ const TextInput = () => {
   const [values, setValues] = useState({
     idea: "",
   });
-  //console.log(values)
-  
+  console.log(values)
+  // const userState = useSelector(state => {console.log(state); return state});
+  // console.log(userState)
   function handleInputChange(e) {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
     setValues({ ...values, [name]: value });
-    const userState = useSelector(state => {console.log(state); return state});
-  console.log(userState)
   }
   return(
     <input style={style} onChange={handleInputChange} type="text" name="idea"></input>

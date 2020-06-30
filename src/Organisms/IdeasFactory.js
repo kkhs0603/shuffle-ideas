@@ -27,9 +27,9 @@ const IdeasFactory = () => {
     });
     console.log(ideas)
   }
-  const userState = useSelector(state => {console.log(state); return state.values});
+  //const userState = useSelector(state => {console.log(state); return state.values});
   const setIdea = () => {
-    console.log(userState);
+    //console.log(userState);
     let db = firebase.database();
     let ref = db.ref('ideas');
     ref.push({
